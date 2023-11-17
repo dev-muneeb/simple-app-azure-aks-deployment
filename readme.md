@@ -1,5 +1,3 @@
-Certainly! Below is a README.md file with formatted instructions for deploying a Dockerized application to Azure using Azure Container Registry and Azure Kubernetes Service (AKS):
-
 ```markdown
 # Deploying Simple App to Azure using Docker and AKS
 
