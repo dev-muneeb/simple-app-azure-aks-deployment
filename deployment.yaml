@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-app-deployment
+spec:
+  replicas: 3  # Number of desired instances
+  selector:
+    matchLabels:
+      app: simple-app
+  template:
+    metadata:
+      labels:
+        app: simple-app
+    spec:
+      containers:
+      - name: simple-app-container
+        image: mrdev.azurecr.io/simple-app:1.0  # Replace with your image and tag
+        ports:
+        - containerPort: 80  # Expose the container port
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-app-service
+spec:
+  selector:
+    app: simple-app
+  ports:
+    - protocol: TCP
+      port: 5000  # Port exposed by the container
+      targetPort: 5000  # Port the container listens on
+  type: LoadBalancer  # Exposes the service externally using a cloud provider's load balancer
+

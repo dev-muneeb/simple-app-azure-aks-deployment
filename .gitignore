@@ -1,0 +1,27 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs and other local project-specific files
+logs/
+*.log
+npm-debug.log*
+
+# Ignore environment variables file
+.env
+
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Jest test results
+coverage/
+
+# Ignore dependencies file
+yarn.lock
+package-lock.json
